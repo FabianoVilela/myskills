@@ -4,7 +4,7 @@ import {Platform} from 'react-native';
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #121015;
-  padding: 20px 20px 0;
+  padding: 50px 20px 0;
 `;
 
 export const Title = styled.Text`
