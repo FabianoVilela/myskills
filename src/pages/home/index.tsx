@@ -24,6 +24,10 @@ export function Home() {
     setMySkills([...mySkills, skill]);
   }
 
+  function handleRemoveSkill(id: string) {
+    setMySkills(oldState => oldState.filter(s => s.id !== id));
+  }
+
   return (
     <Container>
       <Title>Hello, Fabiano</Title>
@@ -33,7 +37,12 @@ export function Home() {
         data={mySkills}
         keyExtractor={item => item.id}
         renderItem={({item}) => (
-          <SkillCard title={item.title} onPress={() => {}} />
+          <SkillCard
+            title={item.title}
+            onPress={() => {
+              handleRemoveSkill(item.id);
+            }}
+          />
         )}
       />
     </Container>
